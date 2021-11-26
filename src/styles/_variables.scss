@@ -1,0 +1,18 @@
+@import '../styles/mixins.scss';
+
+$bg-color-light: var(--bg-color-light);
+$bg-color-dark: var(--bg-color);
+$bg-color-page: var(--bg-color-page);
+$text-color: var(--color);
+
+$typo-1: 'Arial';
+$typo-2: 'Time New Roman';
+$typo-3: 'OpenDyslexic';
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../assets/fonts/open_dyslexic/OpenDyslexic-Regular.otf')
+    format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}

@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+p {
+  margin-top: 0;
+}
+
+.general-container {
+  width: 100%;
+  font-weight: 400;
+  line-height: calc(var(--fontSize) * 1.5 );
+  letter-spacing: -5.5%;
+  z-index: 0;
+  color: var(--color);
+  &.frog-is-active {
+    line-height: calc(var(--fontSize) * 2 );
+    text-align: left;
+    letter-spacing: 0.2em;
+    word-spacing: 0.2em;
+  }
+  &.arial {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  &.times {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  &.dyslexic {
+    font-family: 'OpenDyslexic';
+  }
+  &.dark {
+    background-color: hsl(240, 24%, 27%);
+    color: white;
+  }
+}
+
+.text-content {
+  position: relative;
+  .text {
+    @include transition;
+    padding: 0px 30px;
+    box-sizing: border-box;
+  }
+}

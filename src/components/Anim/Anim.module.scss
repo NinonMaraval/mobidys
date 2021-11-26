@@ -1,0 +1,87 @@
+@import '../../styles/variables.scss';
+
+
+
+.container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(#EDEDF9, 0.5);
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0px;
+  pointer-events: all;
+  opacity: 0;
+  @include transition;
+  &.is-active {
+    opacity: 1;
+    z-index: 2000;
+    .anim {
+      transform: translateY(0px);
+    }
+  }
+  .anim {
+    @include transition;
+    transform: translateY(100px);
+    padding: 0px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    pointer-events: all;
+    p {
+      width: 300px;
+      text-align: center;
+      font-size: 20px;
+      line-height: calc(20px * 2 );
+      text-align: left;
+      letter-spacing: 0.2em;
+      word-spacing: 0.2em;
+      &.def {
+        width: 80px;
+        border-bottom: 2px solid #212148;
+      }
+    }
+    .cursor {
+      position: absolute;
+      @include transition;
+    }
+    .tooltip {
+      display: inline-block;
+      position: absolute;
+      color: #212148;
+      font-size: 17px;
+      line-height: 24px;
+      text-align: left;
+      width: 300px;
+      left: -180px;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 30px auto;
+      transform: translateY(20px);
+      background: #FFFFFF;
+      letter-spacing: normal;
+      word-spacing: normal;
+      box-shadow: 0px -3px 40px rgba(0, 0, 0, 0.12);
+      z-index: 1;
+    }
+    &.sound {
+      .icon {
+        position: absolute;
+        width: 40px;
+        top: -60px;
+      }
+    }
+    .drag {
+      position: absolute;
+      top: calc(20px * 2 );
+      .cursor {
+        transform: translate(-60px , 2px);
+      }
+    }
+  }
+}

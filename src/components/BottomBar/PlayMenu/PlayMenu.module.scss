@@ -1,0 +1,94 @@
+@import '../../../styles/variables.scss';
+
+.play {
+  position: absolute;
+  z-index: 7;
+  width: 100%;
+  padding: 15px 15px 26px 15px;
+  margin-bottom: -4px;
+  bottom: 0px;
+  background-color: $bg-color-light;
+  box-shadow: 0px -3px 40px rgba(0, 0, 0, 0.12);
+  border-top-right-radius: 32px;
+  border-top-left-radius: 32px;
+  box-sizing: border-box;
+  @include transition;
+  &:not(.open) {
+    transform: translateY(100%);
+  }
+  button {
+    width: 70px;
+    border: none;
+    background-color: $bg-color-light;
+    margin: 0 18px;
+    padding: 0%;
+    user-select: none;
+    cursor: pointer;
+    @include remove-tap-highlight();
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.play-btns-container {
+  margin: 1px auto 0px auto;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(33, 33, 72, 0.2);
+  margin-bottom: 36px;
+}
+
+.speech {
+  position: absolute;
+  opacity: 0;
+  bottom: -100px;
+}
+
+.speed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 7px 0px 7px;
+  align-items: center;
+  .range-label {
+    display: flex;
+    align-items: center;
+    transform: translateY(8px);
+  }
+  &.infinit {
+    img {
+      margin-left: 10px;
+    }
+  }
+  &.horizontal {
+    img {
+      display: none;
+    }
+  }
+  &.vertical {
+    .range-label {
+      width: 100%;
+      justify-content: space-between;
+      .img {
+        width: 40px;
+        padding: 5px 10px;
+      }
+    }
+  }
+  p {
+    margin: 0px;
+    &.dark {
+      color: white;
+    }
+  }
+
+}

@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.bottom-bar {
+  background-color: white;
+  width: calc(100% - 50px);
+  max-width: 500px;
+  position: fixed;
+  bottom: -200px;
+  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%); 
+  @include transition;
+  &.is-active {
+    bottom: 0px;
+  }
+}

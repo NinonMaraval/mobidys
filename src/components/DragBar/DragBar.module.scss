@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.drag-bar {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+ @include transition;
+ display: flex;
+  &:not(.open) {
+    display: none;
+  }
+}
+
+.drag-img {
+  user-select: none;
+  transform: translateY(-1px);
+  @include remove-tap-highlight();
+}
